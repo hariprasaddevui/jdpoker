@@ -1,0 +1,60 @@
+:root {
+  --max-width: 714px; /* Max width for cardHolder */
+  --max-height: 327px; /* Max height for cardHolder */
+  --icon-size: 44px; /* Default size for decision icon */
+  --gap: 10px; /* Gap between card items */
+}
+
+.gameWrapper {
+  display: grid;
+  place-items: end center; /* Center content in the gameWrapper */
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.cardHolder {
+  width: 100%; /* Full width of the container */
+  max-width: var(--max-width); /* Set max width */
+  aspect-ratio: 714 / 327; /* Maintain aspect ratio for cardHolder */
+  background-color: green; /* Background color for visualization */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+  gap: var(--gap); /* Gap between card items */
+  padding: var(--gap); /* Add padding for visual spacing */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.cardItem {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items */
+  justify-content: center; /* Center align items */
+  flex: 1; /* Allow items to grow and shrink equally */
+}
+
+.cardPlaceHolder {
+  width: 100%; /* Make cardPlaceHolder responsive */
+  height: auto; /* Maintain aspect ratio for card images */
+}
+
+.cardItem img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio of images */
+}
+
+.decisionIcon {
+  width: calc(var(--icon-size) * (100 / var(--max-width))); /* Responsive width based on cardHolder's max-width */
+  height: auto; /* Let height auto to maintain aspect ratio */
+  background-color: red; /* Icon color */
+  border-radius: 50%; /* Make it circular */
+  aspect-ratio: 1; /* Keep it square */
+  margin-top: 5px; /* Add margin for spacing */
+}
+
+/* Optional Media Query for Responsiveness */
+@media (max-width: 800px) {
+  .decisionIcon {
+    width: calc(var(--icon-size) * (100 / var(--max-width)) * 0.8); /* Scale down the icon size */
+    height: calc(var(--icon-size) * (100 / var(--max-width)) * 0.8); /* Scale down the icon size */
+  }
+}

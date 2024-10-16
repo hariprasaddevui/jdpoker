@@ -1,0 +1,109 @@
+.mainBg {
+    background: url('https://i.ibb.co/jGxRRHG/Video-Container.jpg') no-repeat center center;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+
+/* .gameWrapper {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+  }
+  .middleBlock {
+    width: 714px;
+    height: 327px;
+    background-color: green;
+  } */
+.container {
+    display: grid;
+    grid-template-columns: minmax(100px, 714px);
+    justify-content: center;
+}
+
+.xyz {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    background-color: lightblue;
+}
+
+/* .gameWrapper {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .cardHolder {
+    width: clamp(200px, 50vw, 714px);
+    height: auto;
+    aspect-ratio: 714 / 327; 
+    background-color: green;
+  } */
+
+:root {
+    --max-width: 714px;
+    --max-height: 327px;
+    --iconSize: 44px;
+    --card-Y-position: 150px;
+    --card-x-pos: -37.5%;
+
+}
+
+.gameWrapper {
+    display: grid;
+    place-items: end center;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: minmax(200px, 50vw);
+    justify-content: center;
+}
+
+.cardHolder {
+    width: 100%;
+    max-width: var(--max-width);
+    aspect-ratio: 714 / 327;
+    background-color: green;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.cardHolder .cardItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cardHolder .cardItem img {
+    width: 100%;
+}
+
+.dHolder {
+    display: grid;
+    place-items: end center;
+    grid-template-columns: minmax(20px, 50%);
+    width: 100%;
+    align-content: stretch;
+    justify-content: center;
+}
+
+.decisionIcon {
+    width: 100%;
+    max-width: var(--max-width);
+    aspect-ratio: 714 / calc(327 + 160);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cardHolder .cardItem img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+}
