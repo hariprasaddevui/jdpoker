@@ -33,7 +33,7 @@ const Approachment4 = () => {
   return (
     <div className="mainBg">
     <div className="gameWrapper">
-      <div
+      {/* <div
         className="cardHolder"
         style={{
           transform: `scale(${scale})`,
@@ -49,13 +49,28 @@ const Approachment4 = () => {
             <div
               className="child"
               style={{
-                // width: `${childSize}px`,
-                // height: `${childSize}px`,
+                width: `${childSize}px`,
+                height: `${childSize}px`,
               }}
             ></div>
           </div>
         ))}
+      </div> */}
+
+<div className="cardHolder" style={{ transform: `scale(${scale})`, transformOrigin: 'center center' }}>
+  {cardItems.map((_, index) => (
+    <div className="cardItem" key={index}>
+    <div className="child">
+    </div>
+      <div className="cardBg">
+        <img src="https://i.ibb.co/80B4R4g/Flat-Cards-2.png" alt="" />
       </div>
+
+    </div>
+  ))}
+</div>
+
+
     </div>
     </div>
   );
