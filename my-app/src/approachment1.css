@@ -1,0 +1,46 @@
+:root {
+    --game-wrapper-width: 600px; /* Fixed width for the gameWrapper */
+    --card-holder-width: 540px; /* Default width for the cardHolder */
+    --child-width: 40px; /* Default width for the child */
+  }
+  
+  .mainBg {
+      background: url('image.png') no-repeat center center;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+  }
+  
+  .gameWrapper {
+      width: var(--game-wrapper-width);
+      background-color: red;
+      height: 300px;
+  }
+  
+  .cardHolder {
+      width: var(--card-holder-width);
+      height: auto; /* Maintain aspect ratio */
+      background-color: lightblue;
+  }
+  
+  .child {
+      width: var(--child-width);
+      height: auto; /* Maintain aspect ratio */
+      background-color: pink;
+  }
+  
+  /* Resize proportionally when the viewport width is below 1800px */
+  @media (max-width: 1800px) {
+      :root {
+          --card-holder-width: calc(90%); /* Scale cardHolder proportionally */
+          --child-width: calc(90% / 13.5); /* Maintain proportional scaling relative to cardHolder */
+      }
+  
+      .gameWrapper {
+          width: 90%; /* Proportional to viewport */
+      }
+  }
+  

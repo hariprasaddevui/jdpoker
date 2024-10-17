@@ -1,0 +1,24 @@
+.mainBg {
+    background: url('image.png') no-repeat center center;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.gameWrapper {
+    width: 600px; /* Fixed width for 1800px and above */
+    background-color: red;
+    height: 150px;
+    min-width: 200px;
+}
+
+/* When the viewport width is below 1800px, scale the width proportionally */
+@media (max-width: 1800px) {
+    .gameWrapper {
+        width: 33.33vw; /* Scales to 1/3rd of the viewport width */
+        /* max-width: 600px; */
+    }
+}

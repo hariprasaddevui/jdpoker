@@ -1,0 +1,66 @@
+:root {
+    --defaultChildSize: 44px; /* Default size */
+    --defaultCardHolderWidth: 570px;
+    --minCardHolderWidth: 200px;
+    --childSize:41px;
+    
+  }
+  .mainBg {
+    background: url('image.png') no-repeat center center;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+  .gameWrapper {
+    display: grid;
+    place-items: end center;
+    margin-bottom: 105px;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .cardHolder {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-content: center;
+    width: var(--cardHolderWidth, var(--defaultCardHolderWidth)); /* Dynamic width */
+    max-width: var(--defaultCardHolderWidth);
+    min-width: var(--minCardHolderWidth);
+    /* aspect-ratio: 1 / 1; */
+    grid-template-columns: repeat(5, 1fr);
+    background-color: cyan;
+    gap: 10px;
+    transition: all 0.5s ease;
+  
+  }
+  
+   
+  .child {
+    width: var(--childSize, var(--defaultChildSize)); /* Dynamic size */
+    height: var(--childSize, var(--defaultChildSize)); /* Dynamic size */
+    background-color: teal;
+    aspect-ratio: 1 / 1;
+    transition: all 0.5s ease;
+  
+  }
+  .cardBg img{
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+  
+  }
+  .cardItem{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s ease;
+  
+  }
+  .cardBg {
+    /* transform: translateX(-50%) rotateX(56deg) translateY(calc(var(--card-Y-position) + 20px)) translateX(calc(var(--card-x-pos)* 7)); */
+}
