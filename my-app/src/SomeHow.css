@@ -1,0 +1,34 @@
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.mainBg {
+  background: url('image.png') no-repeat center center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.cBOx {
+  background-color: red;
+  width: 304px; /* Base width at 320px */
+  height: 66.09px; /* Base height at 320px */
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+.cBoxText {
+  display: inline-block;
+}
+
+

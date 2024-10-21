@@ -1,0 +1,126 @@
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.mainBg {
+  background: url('image.png') no-repeat center center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.cBOx {
+  width: 304px;
+  height: 66.09px;
+  margin-bottom: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cBoxText {
+  display: inline-block;
+  position: absolute;
+  top: -50px;
+  background-color: #262626;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  padding: 10px 0;
+}
+.cardHolder {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-content: center;
+  column-gap: 3px;
+  transition: all 0.5s ease;
+  padding: 0 6.25%;
+}
+
+.cardItem {
+  display: flex;
+  row-gap: 0px;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.5s ease;
+  /* transform-style: preserve-3d; */
+  /* Ensures 3D context */
+  position: relative;
+  perspective: 1000px;
+  padding: 0 10%;
+
+}
+
+.cardBg {
+  transform-origin: center top;
+  height: max-content;
+  display: grid;
+}
+
+.cardBg img {
+  width: 100%;
+}
+
+.cardItem:nth-child(1) .cardBg {
+  transform: rotateX(50deg) scaleY(1) skewX(-9.5deg) scaleX(0.95);
+}
+
+.cardItem:nth-child(2) .cardBg {
+  transform: rotateX(50deg) scaleY(1) skewX(-4.75deg) scaleX(calc(0.95));
+}
+
+.cardItem:nth-child(3) .cardBg {
+  transform: rotateX(50deg) scaleY(1) skewX(0deg) scaleX(calc(0.95));
+}
+
+.cardItem:nth-child(4) .cardBg {
+  transform: rotateX(50deg) scaleY(1) skewX(4.75deg) scaleX(calc(0.95));
+}
+
+.cardItem:nth-child(5) .cardBg {
+  transform: rotateX(50deg) scaleY(1) skewX(9.5deg) scaleX(0.95);
+}
+
+/* Decision Icon */
+.child {
+  --childSize: 21px;
+  width: var(--childSize, var(--defaultChildSize));
+  height: var(--childSize, var(--defaultChildSize));
+  background: url(https://i.ibb.co/N9wmBgK/Hold-no.png) no-repeat center center;
+  background-size: contain;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  /* transform: none; */
+  /* perspective: none; */
+  transform-style: flat;
+  /* position: absolute; */
+  bottom: 0px;
+  /* z-index: 1; */
+}
+
+.cardItem:nth-child(1) .child {
+  transform: translateX(-12px);
+}
+
+.cardItem:nth-child(2) .child {
+  transform: translateX(-6px);
+}
+
+.cardItem:nth-child(3) .child {
+  transform: translateX(-0px);
+}
+
+.cardItem:nth-child(4) .child {
+  transform: translateX(6px);
+}
+
+.cardItem:nth-child(5) .child {
+  transform: translateX(12px);
+}

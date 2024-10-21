@@ -2,8 +2,8 @@
 
 :root {
     --defaultChildSize: 44px;
-    --defaultCardHolderWidth: calc(304px - 2.8%);
-    --minCardHolderWidth: 200px;
+    --defaultCardHolderWidth: calc(570px - 0%);
+    /* --minCardHolderWidth: 200px; */
 }
 
 .gameWrapper {
@@ -35,7 +35,7 @@
     min-width: var(--minCardHolderWidth);
     column-gap: 27px;
     transition: all 0.5s ease;
-    padding: 0 1.4%;
+    /* padding: 0 1.4%; */
 }
 
 .cardItem {
@@ -79,7 +79,6 @@
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease;
-    
 }
 
 
@@ -90,7 +89,7 @@
 }
 
 .child {
-    --childSize: 41px;
+    --childSize: 21px;
     width: var(--childSize, var(--defaultChildSize));
     height: var(--childSize, var(--defaultChildSize));
     background: url(https://i.ibb.co/N9wmBgK/Hold-no.png) no-repeat center center;
@@ -180,7 +179,7 @@
     }
 }
 
-@media(min-width:360px) {
+/* @media(min-width:360px) {
     .cardHolder {
         width: var(--cardHolderWidth, calc(var(--defaultCardHolderWidth) * 1.1316));
         max-width: calc(var(--defaultCardHolderWidth) * 1.1316);
@@ -235,8 +234,4 @@
         max-width: calc(var(--defaultCardHolderWidth) * 1.875);
     }
 }
-
-.child {
-    width: var(--childSize, var(--defaultChildSize));
-    height: var(--childSize, var(--defaultChildSize));
-}
+ */
