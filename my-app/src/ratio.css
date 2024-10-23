@@ -1,0 +1,43 @@
+body {
+    background-color: #cecece;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 14:3 ratio */
+    height: 100vh;
+  }
+  
+  .leftWing {
+    background-color: red;
+  }
+  
+  .midWing {
+    background-color: green;
+    display: grid;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .rightWing {
+    background-color: blue;
+  }
+  
+  .box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four mini boxes in the middle */
+    column-gap: 10px;
+    width: calc(100% - 17%);
+  }
+  
+  .mini {
+    background-color: cyan;
+    aspect-ratio: 1; /* Keep square shapes */
+    min-height: 100px;
+    width: 100%;
+    height: 100%;
+  }
+  

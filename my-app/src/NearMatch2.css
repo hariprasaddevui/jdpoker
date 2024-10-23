@@ -1,0 +1,193 @@
+body {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mainBg {
+    background: url('image.png') no-repeat center center;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  .cBOx {
+    width: var(--widthSetter);
+    aspect-ratio: 4.6 / 1;
+    margin-bottom: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 620px;
+    transition: all 0.3s ease;
+  
+  }
+  @media(min-width:1801px){
+    .cBOx{
+      /* aspect-ratio: inherit; */
+      background-color: red;
+    }
+  }
+  
+  .cBoxText {
+    display: inline-block;
+    position: absolute;
+    top: -50px;
+    background-color: #262626;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    padding: 10px 0;
+  }
+  .cardHolder {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-content: center;
+    column-gap: 3px;
+    transition: all 0.5s ease;
+  }
+  
+  .cardItem {
+    display: flex;
+    row-gap: 0px;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s ease;
+    /* transform-style: preserve-3d; */
+    /* Ensures 3D context */
+    position: relative;
+    perspective: 1000px;
+    padding: 0 10%;
+  
+  }
+  
+  .cardBg {
+    transform-origin: center top;
+    height: max-content;
+    display: grid;
+  }
+  
+  .cardBg img {
+    width: 100%;
+  }
+  
+  
+  /* Decision Icon */
+  .child {
+    --childSize: 21px;
+    width: var(--childSize, var(--defaultChildSize));
+    height: var(--childSize, var(--defaultChildSize));
+    background: url(https://i.ibb.co/N9wmBgK/Hold-no.png) no-repeat center center;
+    background-size: contain;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    transform-style: flat;
+    bottom: 0px;
+  }
+  
+  /* Desktop */
+  /* 1800x1031 */
+  @media only screen and (min-width: 1800px) and (min-height: 1013px) {
+    :root {
+      --widthSetter: 31.67%;
+    }
+  }
+  
+  /* 1512x851 */
+  @media only screen and (max-width: 1512px) and (min-height: 851px) {
+    :root {
+      --widthSetter: 30.4%;
+    }
+  }
+  
+  /* 1366x769 */
+  @media only screen and (max-width: 1366px) and (min-height: 769px) {
+    :root {
+      --widthSetter: 32.25%;
+    }
+  }
+  
+  /* 1024x567 */
+  @media only screen and (max-width: 1024px) and (min-height: 567px) {
+    :root {
+      --widthSetter: 33.2%;
+    }
+  }
+  
+  /* Landscape */
+  
+  /* 900x320 */
+  @media only screen and (max-width: 900px) and (min-height: 320px) {
+    :root {
+      --widthSetter: 24.4%;
+    }
+  }
+  
+  /* 900x567 */
+  @media only screen and (max-width: 900px) and (min-height: 567px) {
+    :root {
+      --widthSetter: 39.8%;
+    }
+  }
+  
+  /* 900x899 */
+  @media only screen and (max-width: 900px) and (min-height: 899px) {
+    :root {
+      --widthSetter: 51.1%;
+    }
+  }
+  /* 568x319 */
+  @media only screen and (max-width: 568px) and (min-height: 319px) {
+    :root {
+      --widthSetter: 38.73%;
+    }
+  }
+  
+  /* 568x320 */
+  @media only screen and (max-width: 568px) and (min-height: 320px) {
+    :root {
+      --widthSetter: 38.73%;
+    }
+  }
+  
+  /* 620x375 */
+  @media only screen and (max-width: 620px) and (min-height: 375px) {
+    :root {
+      --widthSetter: 44.51%;
+    }
+  }
+  
+  /* Portrait */
+  
+  /* 619x667 */
+  @media only screen and (max-width: 619px) and (min-height: 667px) {
+    :root {
+      --widthSetter: 57.99%;
+    }
+  }
+  /* 320x568 */
+  @media only screen and (max-width: 320px) and (min-height: 568px) {
+    :root {
+      --widthSetter: calc(100% - 16px);
+    }
+  }
+  
+  /* 360x619 */
+  @media only screen and (max-width: 360px) and (min-height: 619px) {
+    :root {
+      --widthSetter: calc(100% - 16px);
+    }
+  }
+  
+  /* 375x667 */
+  @media only screen and (max-width: 375px) and (min-height: 667px) {
+    :root {
+      --widthSetter: calc(100% - 16px);
+    }
+  }
+  

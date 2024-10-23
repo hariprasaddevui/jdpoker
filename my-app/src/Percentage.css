@@ -1,0 +1,66 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.parent {
+    height: 80vh;
+    width: 100%;
+    /* Parent takes full available width */
+    max-width: 1800px;
+    /* Maximum width of the parent */
+    margin: 0 auto;
+    /* Center the parent */
+    background-color: red;
+    display: grid;
+    grid-template-columns: 30.22% auto 30.22%;
+    /* Left and right fixed, middle takes the remaining space */
+}
+
+.midSection {
+    background-color: blue;
+    background-color: blue;
+    display: grid;
+    align-items: end;
+    justify-content: space-evenly;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+.leftSection,
+.rightSection {
+    background-color: cyan;
+}
+
+.cardContainer {
+    background-color: green;
+    width: 100%;
+    /* Ensure full width */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 equal columns for card items */
+    gap: 10px;
+    /* Optional: spacing between cards */
+}
+
+
+.cardItem {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 100px;
+    /* aspect-ratio: 1/1; */
+}
+
+.cardAsset {
+    background: url(../public/images/JSpades.png) no-repeat center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.decisinIcon {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+}
