@@ -10,7 +10,9 @@ import logo from "./logo.svg";
 //  import "./approachment8.css";
 // import "./ResizingDiv.css"
 // import "./SomeHow.css"
-import "./NearMatch.css";
+// import "./NearMatch.css";
+import "./NearMatch2.css";
+
 
 // import "./approachment2.css";
 
@@ -25,6 +27,8 @@ import Approachment8 from "./Approachment8";
 import ResizingDiv from "./ResizingDiv";
 import SomeHow from "./SomeHow";
 import NearMatch from "./NearMatch";
+import NearMatch2 from "./NearMatch2";
+
 // import "./App2.css";
 
 function App() {
@@ -96,7 +100,9 @@ function App() {
 {/* <Approachment8/> */}
 {/* <ResizingDiv/> */}
 {/* <SomeHow/> */}
-      <NearMatch />
+      {/* <NearMatch /> */}
+      <NearMatch2 />
+
     </>
   );
 }
