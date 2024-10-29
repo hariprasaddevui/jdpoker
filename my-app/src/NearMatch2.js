@@ -71,6 +71,9 @@ export default function NearMatch() {
           </div>
         </div>
       </div>
+      <footer>
+        
+      </footer>
     </div>
   );
 }

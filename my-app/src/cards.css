@@ -1,0 +1,125 @@
+*:nth-child(1) {
+    --index: 0;
+    --card-x-pos: calc(-1 * var(--midSection));
+    --card-speed: 600ms;
+    --prev-card-speed: 0ms;
+}
+
+*:nth-child(2) {
+    --index: 1;
+    --card-x-pos: calc(-1 * var(--midSection) * 0.5);
+    --card-speed: 500ms;
+    --prev-card-speed: 600ms;
+}
+
+*:nth-child(3) {
+    --index: 2;
+    --card-x-pos: calc(var(--midSection) * 0);
+    --card-speed: 450ms;
+    --prev-card-speed: 1100ms;
+}
+
+*:nth-child(4) {
+    --index: 3;
+    --card-x-pos: calc(var(--midSection) * 0.5);
+    --card-speed: 500ms;
+    --prev-card-speed: 1550ms;
+}
+
+*:nth-child(5) {
+    --index: 4;
+    --card-x-pos: var(--midSection);
+    --card-speed: 600ms;
+    --prev-card-speed: 2150ms;
+}
+
+.cardContainer {
+    width: var(--midSection);
+    position: absolute;
+    top: calc(var(--iglooPosition));
+    padding-top: calc(var(--iglooRemain));
+}
+
+
+@media(min-width:1024px) {
+    .cardContainer {
+        width: var(--midSection);
+        position: absolute;
+        top: calc(var(--iglooPosition));
+        padding-top: calc(var(--iglooRemain));
+    }
+}
+
+.cardItem {
+    display: flex;
+    row-gap: 0px;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s ease;
+    position: relative;
+    perspective: 1000px;
+    /* padding: 0 10%; */
+
+}
+
+.cardBg {
+    transform-origin: center top;
+    height: max-content;
+    display: grid;
+}
+
+.cardBg img {
+    width: 100%;
+}
+
+.cardItem:nth-child(1) .cardBg {
+    transform: rotateX(50deg) scaleY(1) skewX(-9.5deg) scaleX(0.95);
+}
+
+.cardItem:nth-child(2) .cardBg {
+    transform: rotateX(50deg) scaleY(1) skewX(-4.75deg) scaleX(calc(0.95));
+}
+
+.cardItem:nth-child(3) .cardBg {
+    transform: rotateX(50deg) scaleY(1) skewX(0deg) scaleX(calc(0.95));
+}
+
+.cardItem:nth-child(4) .cardBg {
+    transform: rotateX(50deg) scaleY(1) skewX(4.75deg) scaleX(calc(0.95));
+}
+
+.cardItem:nth-child(5) .cardBg {
+    transform: rotateX(50deg) scaleY(1) skewX(9.5deg) scaleX(0.95);
+} 
+.cardItem:nth-child(1) .decision {
+    transform: translateX(-14px);
+}
+
+.cardItem:nth-child(2) .decision {
+    transform: translateX(-7px);
+}
+
+.cardItem:nth-child(3) .decision {
+    transform: translateX(-0px);
+}
+
+.cardItem:nth-child(4) .decision {
+    transform: translateX(7px);
+}
+
+.cardItem:nth-child(5) .decision {
+    transform: translateX(14px);
+}
+@media (min-width: 1512px) and (min-height: 567px) {
+    .decision {
+        --childSize: 33px;
+    }
+}
+
+@media(min-width:1800px) {
+    .decision {
+        --childSize: 41px;
+    }
+
+ 
+}

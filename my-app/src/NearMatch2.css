@@ -209,3 +209,12 @@ body {
         width: calc(100% - (var(--cardCenter) * 2.4));
     }
 }
+
+footer{
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: none;
+    height:100px;
+}

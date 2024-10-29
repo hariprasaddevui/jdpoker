@@ -11,8 +11,8 @@ import logo from "./logo.svg";
 // import "./ResizingDiv.css"
 // import "./SomeHow.css"
 // import "./NearMatch.css";
-import "./NearMatch2.css";
-
+// import "./NearMatch2.css";
+import "./gameContainer.css";
 
 // import "./approachment2.css";
 
@@ -28,6 +28,7 @@ import ResizingDiv from "./ResizingDiv";
 import SomeHow from "./SomeHow";
 import NearMatch from "./NearMatch";
 import NearMatch2 from "./NearMatch2";
+import GameContainer from "./ GameContainer";
 
 // import "./App2.css";
 
@@ -90,19 +91,19 @@ function App() {
           </div>
         </div>
       </div>
-{/* <Approachment1/> */}
-{/* <Approachment2/> */}
-{/* <Approachment3/> */}
-{/* <Approachment4/> */}
-{/* <Approachment5/>  */}
-{/* <Approachment/> */}
-{/* <Approachment7/> */}
-{/* <Approachment8/> */}
-{/* <ResizingDiv/> */}
-{/* <SomeHow/> */}
+      {/* <Approachment1/> */}
+      {/* <Approachment2/> */}
+      {/* <Approachment3/> */}
+      {/* <Approachment4/> */}
+      {/* <Approachment5/>  */}
+      {/* <Approachment/> */}
+      {/* <Approachment7/> */}
+      {/* <Approachment8/> */}
+      {/* <ResizingDiv/> */}
+      {/* <SomeHow/> */}
       {/* <NearMatch /> */}
-      <NearMatch2 />
-
+      {/* <NearMatch2 /> */}
+      <GameContainer />
     </>
   );
 }
