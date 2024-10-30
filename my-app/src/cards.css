@@ -1,34 +1,34 @@
 *:nth-child(1) {
     --index: 0;
-    --card-x-pos: calc(-1 * var(--midSection));
+    --card-x-pos: -50%;
     --card-speed: 600ms;
     --prev-card-speed: 0ms;
 }
 
 *:nth-child(2) {
     --index: 1;
-    --card-x-pos: calc(-1 * var(--midSection) * 0.5);
+    --card-x-pos: -25%;
     --card-speed: 500ms;
     --prev-card-speed: 600ms;
 }
 
 *:nth-child(3) {
     --index: 2;
-    --card-x-pos: calc(var(--midSection) * 0);
+    --card-x-pos: 0%;
     --card-speed: 450ms;
     --prev-card-speed: 1100ms;
 }
 
 *:nth-child(4) {
     --index: 3;
-    --card-x-pos: calc(var(--midSection) * 0.5);
+    --card-x-pos: 25%;
     --card-speed: 500ms;
     --prev-card-speed: 1550ms;
 }
 
 *:nth-child(5) {
     --index: 4;
-    --card-x-pos: var(--midSection);
+    --card-x-pos: 50%;
     --card-speed: 600ms;
     --prev-card-speed: 2150ms;
 }
@@ -45,8 +45,8 @@
     .cardContainer {
         width: var(--midSection);
         position: absolute;
-        top: calc(var(--iglooPosition));
-        padding-top: calc(var(--iglooRemain));
+        top: calc((var(--iglooPosition) + 10px));
+        padding-top: calc(var(--iglooRemain) + 1px);
     }
 }
 
@@ -58,7 +58,6 @@
     transition: all 0.5s ease;
     position: relative;
     perspective: 1000px;
-    /* padding: 0 10%; */
 
 }
 
@@ -90,13 +89,14 @@
 
 .cardItem:nth-child(5) .cardBg {
     transform: rotateX(50deg) scaleY(1) skewX(9.5deg) scaleX(0.95);
-} 
+}
+
 .cardItem:nth-child(1) .decision {
-    transform: translateX(-14px);
+    transform: translateX(-20px);
 }
 
 .cardItem:nth-child(2) .decision {
-    transform: translateX(-7px);
+    transform: translateX(-10px);
 }
 
 .cardItem:nth-child(3) .decision {
@@ -104,12 +104,13 @@
 }
 
 .cardItem:nth-child(4) .decision {
-    transform: translateX(7px);
+    transform: translateX(10px);
 }
 
 .cardItem:nth-child(5) .decision {
-    transform: translateX(14px);
+    transform: translateX(20px);
 }
+
 @media (min-width: 1512px) and (min-height: 567px) {
     .decision {
         --childSize: 33px;
@@ -121,5 +122,5 @@
         --childSize: 41px;
     }
 
- 
+
 }

@@ -1,9 +1,28 @@
 @import url("cards.css");
 
 body {
-    padding: o;
+    padding: 0;
     margin: 0;
 }
+
+:root {
+    --index: 0;
+    --animation-container-width: 100%;
+    --animation-container-height: 100%;
+    --card-width: 20%;
+    --card-height: 100%;
+    --core-timing-function-snap: cubic-bezier(0.7, 0, 0.7, 1);
+    --midSection: 39.65%;
+    --leftRightSection: 30.175%;
+    --iglooPosition: 68.2291%;
+    --iglooRemain: 9.375%;
+    /* --cardCenter: 8.3538%; */
+    /* --cardsSpace: 4.8828%; */
+    /* --independent: calc(var(--midSection) - (var(--cardsSpace) * 2)); */
+    /* --cardActualSize: calc(var(--card-width) - (var(--cardsSpace))); */
+    --childSize: 25px;
+}
+
 
 .mainBg {
     background: url("image.png") no-repeat center center;
@@ -35,53 +54,6 @@ body {
     top: calc(var(--iglooPosition) + var(--iglooRemain));
 }
 
-/* 
-.cardContainer {
-    background-color: red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-:root {
-    --index: 0;
-    --animation-container-width: 100%;
-    --animation-container-height: 100%;
-    /* --card-width: 68px;
-    --card-height: 94px; */
-    --card-width: 20%;
-    --card-height: 100%;
-    
-    --core-timing-function-snap: cubic-bezier(0.7, 0, 0.7, 1);
-
-    /* New */
-    --midSection: 39.65%;
-    --iglooPosition: 68.2291%;
-    /* --iglooPositionBottom: 9.375%; */
-    /* --iglooRemain:31.7708%;
-    --iglooBox:22.39%;
-    --x:9.375% */
-    --iglooRemain: 9.375%;
-    --cardCenter: 8.3538%;
-    --cardsSpace:4.8828%;
-    --independent: calc(var(--midSection) - (var(--cardsSpace) * 2));
-    --cardActualSize: calc(var(--card-width) - (var(--cardsSpace)));
-    --childSize: 25px;
-
-}
-
-.z{
-    background-color: red;
-    width: var(--independent);
-    height: 200px;
-    position: fixed;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-}
-/*
-1. Use a more-intuitive box-sizing model.
-*/
 
 .controls {
     position: fixed;
@@ -92,7 +64,9 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px;
-    top:0;
+    top: 0;
+    height: 50vh;
+    width: var(--midSection);
 }
 
 .btn {
@@ -112,33 +86,16 @@ body {
     filter: brightness(1.25);
 }
 
-/* Animation Styles */
-/* .game-container {
-    width: 100%;
-    height: 100%;
-max-width: 1512px; 
-max-height: 851px; 
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, 0);
-
-} */
-
 .cards-animation {
     position: absolute;
-    /* width: 100%; */
-    width:calc(100% - (var(--cardsSpace) * 5));
+    width: calc((var(--midSection) * 1.5) - 2%);
     height: 100%;
-    /* max-width: var(--animation-container-width);
-    max-height: var(--animation-container-height); */
-    /* background-color: rgba(255, 0, 0, 0.15); */
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     perspective: 1000px;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .cards-animation .card {
@@ -146,13 +103,11 @@ max-height: 851px;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    /* width: 100%; */
-    width:var(--independent);
+    width: 18%;
     height: auto;
-max-width: var(--cardActualSize); 
-     max-height: var(--card-height);
-    aspect-ratio: calc(var(--card-width) / var(--card-height)); 
-    /* background-size: 100% !important; */
+    max-width: 20%;
+    max-height: var(--card-height);
+    aspect-ratio: calc(var(--card-width) / var(--card-height));
     opacity: 0;
     transition: all;
     transition-duration: calc(var(--card-speed) / 3);
@@ -166,7 +121,6 @@ max-width: var(--cardActualSize);
     cursor: pointer;
 }
 
-/* Distribute Cards */
 .cards-animation .card.distribute {
     top: 50%;
     opacity: 1;
@@ -175,25 +129,15 @@ max-width: var(--cardActualSize);
     transition-delay: calc(var(--prev-card-speed));
 }
 
-/* .cards-animation .card.distribute:nth-child(n) {
-    left: calc(50% + var(--card-x-pos));
-} */
-
-/* Decision */
 .cards-animation .card.decision-mode {
-    /* top: calc(50% + 5px); */
-    top:calc(var(--iglooPosition) - var(--iglooRemain));
+    top: calc(var(--iglooPosition) - var(--iglooRemain));
     left: calc(50% + var(--card-x-pos)) !important;
     transition-duration: 800ms;
-    /* Pronounced from Animation Tokens */
     transition-delay: 0ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    /* Standard from Animation Tokens */
-    /* transform: translateX(-50%) translateZ(0) rotateX(56deg); */
 }
 
 .cards-animation .card.decision-mode:hover {
-    /* transform: translateX(-50%) translateZ(0) rotateX(56deg) scale(1.1); */
     transition: transform 100ms var(--core-timing-function-snap);
 }
 
@@ -209,15 +153,6 @@ max-width: var(--cardActualSize);
     transition: opacity 333ms ease-in-out, border-color 100ms ease-in-out;
     display: none;
 }
-/* .cards-animation .card:nth-child(4)::after{
-    transform: rotateX(50deg) scaleY(1) skewX(4.75deg) scaleX(calc(0.95));
-
-}
-.cards-animation .card:nth-child(5)::after{
-    transform: rotateX(50deg) scaleY(1) skewX(9.5deg) scaleX(0.95);
-
-} */
-
 
 .cards-animation .card.decision-mode:nth-child(4)::after,
 .cards-animation .card.decision-mode:nth-child(5)::after {
@@ -231,37 +166,17 @@ max-width: var(--cardActualSize);
 }
 
 .cards-animation .card.decision-mode .decision {
-    /* position: absolute;
-    z-index: 2;
-    width: 36px;
-    height: 36px;
-    bottom: 0;
-    left: 50%;
-    opacity: 1;
-    transform: translateX(-50%) rotateX(0deg) skewX(5deg);
-    position: absolute;
-    transform: none;
-    perspective: none;
-    transform-style: flat; */
-
-    /* --childSize: 21px; */
-     width: var(--childSize); 
-     height: var(--childSize); 
+    width: var(--childSize);
+    height: var(--childSize);
     background: url(https://i.ibb.co/N9wmBgK/Hold-no.png) no-repeat center center;
     background-size: contain;
     aspect-ratio: 1 / 1;
     position: absolute;
-    /* transform: none; */
-    /* perspective: none; */
-    transform-style: flat;
-    /* position: absolute; */
-    bottom: 0px;
-    /* z-index: 1; */
     opacity: 1;
+    bottom: -2%;
 }
 
 .cards-animation .card.decision-mode.discard {
-    /* top: calc(50%); */
     transition-duration: 100ms;
 }
 
@@ -275,17 +190,12 @@ max-width: var(--cardActualSize);
     border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
-.cards-animation .card.decision-mode.discard .decision {
-    background: url(../public/images/Hold-no.png) no-repeat center center;
-    background-size: contain;
-}
-
+.cards-animation .card.decision-mode.discard .decision,
 .cards-animation .card.decision-mode.keep .decision {
     background: url(../public/images/Hold-no.png) no-repeat center center;
     background-size: contain;
 }
 
-/* Discard Rest */
 .cards-animation .card.discard-to-igloo {
     top: -8%;
     left: 50% !important;
